@@ -89,6 +89,18 @@
       <artifactId>spring-aop</artifactId>
       <version>${org.springframework.version}</version>
     </dependency>
+    <!-- spring web模块 -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>${org.springframework.version}</version>
+    </dependency>
+    <!-- spring mvc -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>${org.springframework.version}</version>
+    </dependency>
     <!-- aspectj 切入表达式所需要包 -->
     <dependency>
       <groupId>org.aspectj</groupId>
@@ -118,11 +130,44 @@
       <artifactId>mybatis-spring</artifactId>
       <version>1.2.3</version>
     </dependency>
+    <!-- servlet-api -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.0.1</version>
+      <scope>provided</scope>
+    </dependency><!-- jstl -->
+    <dependency>
+      <groupId>jstl</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+    </dependency>
+    <!-- standard -->
+    <dependency>
+      <groupId>taglibs</groupId>
+      <artifactId>standard</artifactId>
+      <version>1.1.2</version>
+    </dependency>
 
   </dependencies>
 
   <build>
     <finalName>SSM</finalName>
+    <plugins>
+      <!-- 添加一个tomcat插件 -->
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <!-- tomcat启动的端口 -->
+          <port>80</port>
+          <!-- 应用的上下文路径 -->
+          <path>/</path>
+          <uriEncoding>UTF-8</uriEncoding>
+        </configuration>
+      </plugin>
+    </plugins>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>

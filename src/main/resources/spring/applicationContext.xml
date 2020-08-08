@@ -10,8 +10,4 @@
 
     <!-- 配置扫描创建bean -->
     <context:component-scan base-package="cn.zhutan.ssm"/>
-
-    <!-- 引入spring-mybatis.xml -->
-    <import resource="classpath:spring/spring-mybatis.xml"/>
-
 </beans>

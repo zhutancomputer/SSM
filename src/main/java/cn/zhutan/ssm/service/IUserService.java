@@ -14,4 +14,6 @@ public interface IUserService {
     void deleteUser(long id);
 
     void updateUser(User user);
+
+    User selectByUsername(String username);
 }
