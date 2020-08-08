@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zhutan.ssm.mapper.UserMapper">
+	<select id="selectUser" resultType="User">
+		SELECT id, username, password FROM tbl_user WHERE id = #{id};
+	</select>
+
+	<select id="selectAll" resultType="User">
+		SELECT id, username, password FROM tbl_user;
+	</select>
+
+	<insert id="insertUser" useGeneratedKeys="true" keyColumn="id">
+		INSERT INTO tbl_user(username, password) VALUES(#{username}, #{password});
+	</insert>
+
+	<delete id="deleteUser">
+		DELETE FROM tbl_user WHERE id = #{id}
+	</delete>
+
+	<insert id="updateUser">
+		UPDATE tbl_user SET username = #{username}, password = #{password};
+	</insert>
+</mapper>
