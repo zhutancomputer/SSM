@@ -28,9 +28,6 @@ public class UserServiceImpl implements IUserService {
     @Override
     public void insertUser(User user) {
         userMapper.insertUser(user);
-
-        // 模拟异常
-        int a = 1 / 0;
     }
 
     @Override
